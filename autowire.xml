@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    <!-- here we first define the b class bean because the a class is depended upon the b -->
+    
+    <bean class="com.springcore.autowire.adress" name="adr">
+    
+    <property name="city" value="aska"/>
+    <property name="street" value="banibihar" />
+
+
+	</bean>
+	
+	<bean class="com.springcore.autowire.emp" name="emp1" autowire="byName" />
+	
+	<!-- <bean class="com.springcore.autowire.emp" name="emp1" autowire="byType" /> -->
+	
+	<!-- <bean class="com.springcore.autowire.emp" name="emp1" autowire="constructor" />  -->
+	
+	
+	
+	<!--  if you use the bytype autoowire then spring container check is there is bean is there present or not (address in thsi case)-->
+
+	<!-- but in byName it screch the name so in this case the bean having the same name as the varible of the dependent class -->
+   
+    
+</beans>

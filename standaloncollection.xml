@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Defineing the stand alone list not inside the property tag-->
+    
+    <!--  for this we use the util scema  -->
+    
+    <util:list list-class="java.util.LinkedList" id="myfriend">
+    
+    <value> aman </value>
+    <value> rohit </value>
+    <value> rohan </value>
+    
+    </util:list>
+    
+    <!--  making util standalone map -->
+    
+    <util:map map-class="java.util.HashMap" id="coursefee">
+    	
+    <entry key="java devloper" value="5"/>
+    <entry key="python devloper" value="3"/>
+    <entry key="spring devloper" value="7"/>
+    
+    </util:map>
+    
+    <!--  standalone properties -->
+    
+    <util:properties id="dbconfig">
+    	<prop key="driver" >com.oracle.driver.manager </prop>
+    	<prop key="username" >suraj panda </prop>
+    	<prop key="password" >1234 </prop>
+    	<prop key="url" >www.google.com </prop>
+    	
+    </util:properties>
+    
+    <bean class="com.springcore.standalon.collection.person" name="person1">
+    
+    
+    	<property name="friend" ref="myfriend"/>
+    	
+    	<property name="course" ref="coursefee"/>
+    	
+    	<property name="properties" ref="dbconfig"/>
+ 
+
+	</bean>
+    
+
+</beans>

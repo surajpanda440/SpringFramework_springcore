@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    <!-- here we first define the b class bean because the a class is depended upon the b -->
+    
+    <context:annotation-config />
+    
+    <bean class="com.springcore.autowire.annotation2.adress" name="adr">
+    
+    <property name="city" value="aska"/>
+    <property name="street" value="banibihar" />
+
+
+	</bean>
+	
+	<bean class="com.springcore.autowire.annotation2.adress" name="adr2">
+    
+    <property name="city" value="bbsr"/>
+    <property name="street" value="mahura" />
+
+
+	</bean>
+	
+
+	
+	<bean class="com.springcore.autowire.annotation2.emp" name="emp1" /> 
+	
+    
+</beans>
